@@ -1,10 +1,12 @@
 import { Stack } from "expo-router";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { Provider } from "react-redux";
+import { store } from "../redux/store";
 
 export default function RootLayout() {
   return (
     <SafeAreaProvider>
-      <Stack screenOptions={{ headerStyle: {backgroundColor: 'red'}}}>
+      <Stack screenOptions={{ headerStyle: { backgroundColor: "blue" } }}>
         <Stack.Screen
           name="(tabs)"
           options={{

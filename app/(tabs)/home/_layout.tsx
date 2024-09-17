@@ -4,11 +4,17 @@ const HomeLayout = () => {
   return (
     <Stack
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
       }}
     >
-      <Stack.Screen name="index" />
-      <Stack.Screen name="subhome" />
+      <Stack.Screen
+        name="index"
+        options={{ headerShown: true, title: "Home" }}
+      />
+      <Stack.Screen
+        name="subhome"
+        options={{ headerShown: true, title: "Detail" }}
+      />
     </Stack>
   );
 };
