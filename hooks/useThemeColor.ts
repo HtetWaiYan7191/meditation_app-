@@ -1,22 +1,10 @@
-/**
- * Learn more about light and dark modes:
- * https://docs.expo.dev/guides/color-schemes/
- */
+import { selectAppTheme } from "@/redux/auth/authSlice";
+import { useAppSelector } from "@/redux/store";
+import { theme } from "@/services/theme";
 
-import { useColorScheme } from 'react-native';
+const useThemeColor = () => {
+  const appTheme = useAppSelector(selectAppTheme) as "light" | "dark";
+  return theme.colors[appTheme];
+};
 
-import { Colors } from '@/constants/Colors';
-
-export function useThemeColor(
-  props: { light?: string; dark?: string },
-  colorName: keyof typeof Colors.light & keyof typeof Colors.dark
-) {
-  const theme = useColorScheme() ?? 'light';
-  const colorFromProps = props[theme];
-
-  if (colorFromProps) {
-    return colorFromProps;
-  } else {
-    return Colors[theme][colorName];
-  }
-}
+export default useThemeColor;

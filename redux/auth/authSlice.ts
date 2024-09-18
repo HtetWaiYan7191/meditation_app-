@@ -7,6 +7,7 @@ const initialState = {
   email: "",
   error: null,
   loading: "idle",
+  appTheme: "light",
 };
 
 export const authSlice = createSlice({
@@ -18,3 +19,4 @@ export const authSlice = createSlice({
 export default authSlice.reducer;
 
 export const selectIsSignedIn = (state: RootState) => state.auth.isSignedIn;
+export const selectAppTheme = (state: RootState) => state.auth.appTheme;
