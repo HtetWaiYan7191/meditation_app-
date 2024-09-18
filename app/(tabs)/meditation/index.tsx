@@ -1,5 +1,13 @@
-import { Text } from "react-native";
+import { AppScreen } from "@/components/common";
+import { Text } from "native-base";
+import React from "react";
 
-export default function Meditation() {
-  return <Text>Meditation page </Text>;
+function index() {
+  return (
+    <AppScreen>
+      <Text>meditation</Text>
+    </AppScreen>
+  );
 }
+
+export default index;

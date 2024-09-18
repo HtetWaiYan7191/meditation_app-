@@ -1,5 +1,5 @@
 import useThemeColor from "@/hooks/useThemeColor";
-import { Box } from "native-base";
+import { Box, ScrollView } from "native-base";
 import React from "react";
 import { View, StyleSheet, SafeAreaView, Platform } from "react-native";
 
@@ -10,9 +10,11 @@ function AppScreen({ children }: Props) {
   const currentTheme = useThemeColor();
   return (
     <SafeAreaView style={styles.safeArea}>
-      <Box p={4} flex={1} bg={currentTheme.tint}>
-        {children}
-      </Box>
+      <ScrollView flex={1} showsVerticalScrollIndicator>
+        <Box flex={1} p={4}>
+          {children}
+        </Box>
+      </ScrollView>
     </SafeAreaView>
   );
 }

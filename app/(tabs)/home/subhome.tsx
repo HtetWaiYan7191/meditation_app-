@@ -1,9 +1,10 @@
-import { Text, View } from "react-native";
+import { AppScreen } from "@/components/common";
+import { Text } from "react-native";
 
 export default function SubHome() {
-    return (
-        <View>
-            <Text>This is subhome</Text>
-        </View>
-    )
+  return (
+    <AppScreen>
+      <Text>This is subhome</Text>
+    </AppScreen>
+  );
 }
